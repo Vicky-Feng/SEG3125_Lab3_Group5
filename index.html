@@ -10,9 +10,8 @@
 
 <!-- Tab links, each one with an onclick event associated with it -->
 <div class="tab">
-    <h1><span style="font-size:30px;float:left" onclick="openNav()">&nbsp &#9776; Menu</span>&nbsp GVK's Store</h1>
+    <h1 style="color: white; font-family: sans-serif"><span style="font-size:30px;float:left;color: white" onclick="openNav()">&nbsp &#9776; Menu</span> GVK's Store</h1>
 </div>
-
 
 <!--  <button class="tablinks" onclick="openInfo(event, 'Client')">Client</button>-->
 <!--  <button class="tablinks" onclick="openInfo(event, 'Products')">Products</button>-->
@@ -25,22 +24,21 @@
     <a href="#" onclick="openInfo(event, 'Cart')">Cart</a>
 </div>
 
-
-
 <!-- Tab content -->
 <div id="Client" class="tabcontent">
   <h3>Client Information</h3>
-  <p>Tell us a bit about you.</p>
-	Choose a Category:<br>
+  <p>Tell us a bit about you. You are:</p>
 
     <input type="checkbox" id="choice1" name="choice1" value="Vegetarian" onchange="populateListProductChoices('displayProduct')">
     <label for="choice1"> Vegetarian</label><br>
 
-    <input type="checkbox" id="choice2" name="choice2" value="GlutenFree" onchange="populateListProductChoices('displayProduct')">
-    <label for="choice2">Gluten Free</label><br>
+    <input type="checkbox" id="choice2" name="choice2" value="GlutenIntolerance" onchange="populateListProductChoices('displayProduct')">
+    <label for="choice2">Gluten Intolerance</label><br>
 
     <input type="checkbox" id="choice3" name="choice3" value="ShellfishAllergy" onchange="populateListProductChoices('displayProduct')">
     <label for="choice3">Shellfish Allergy</label><br>
+
+    <p> And you prefer products are:<br></p>
 
     <input type="checkbox" id="choice4" name="choice4" value="Organic" onchange="populateListProductChoices('displayProduct')">
     <label for="choice4">Organic</label><br>
@@ -48,18 +46,15 @@
     <input type="checkbox" id="choice5" name="choice5" value="NonOrganic" onchange="populateListProductChoices('displayProduct')">
     <label for="choice5">Non-organic</label><br>
 
-
-
-
 </div>
 
 <div id="Products" class="tabcontent">
   <h3>Your targeted products</h3>
-  <p>We preselected products based on your restrictions.</p>
+  <p>We preselected products based on your preference.</p>
 	 Choose items to buy:
 	 <div id="displayProduct"></div>
 	 <button id="addCart" type="button" class="block" onclick="selectedItems()">
-		Add selected items to cart.
+		Add selected items to cart
 	</button>
 </div>
 
