@@ -9,7 +9,8 @@ var products = [
 		glutenFree: true,
 		organic: false,
 		shellfish: false,
-		price: 1.99
+		price: 1.99,
+		img: "broccoli.png"
 	},
 	{
 		name: "bread",
@@ -17,7 +18,8 @@ var products = [
 		glutenFree: false,
 		organic: false,
 		shellfish: false,
-		price: 2.35
+		price: 2.35,
+		img: "bread.png"
 	},
 	{
 		name: "salmon",
@@ -25,7 +27,8 @@ var products = [
 		glutenFree: true,
 		organic: true,
 		shellfish: false,
-		price: 10.00
+		price: 10.00,
+		img: "salmon.png"
 	},
 	{
 		name: "blueberry",
@@ -33,14 +36,16 @@ var products = [
 		glutenFree: true,
 		organic: true,
 		shellfish: false,
-		price: 5.00
+		price: 5.00,
+		img: "blueberries.png"
 	},
 	{
 		name: "beef",
 		vegetarian: false,
 		glutenFree: true,
 		organic: false,
-		price: 12.00
+		price: 12.00,
+		img: "beef.png"
 	},
 	{
 		name: "mushroom",
@@ -48,7 +53,8 @@ var products = [
 		glutenFree: true,
 		organic: true,
 		shellfish: false,
-		price: 6.00
+		price: 6.00,
+		img: "mushroom.png"
 	},
 	{
 		name: "egg",
@@ -56,7 +62,8 @@ var products = [
 		glutenFree: true,
 		organic: false,
 		shellfish: false,
-		price: 6.00
+		price: 6.00,
+		img: "egg.png"
 	},
 	{
 		name: "shrimp",
@@ -64,7 +71,8 @@ var products = [
 		glutenFree: true,
 		organic: false,
 		shellfish: true,
-		price: 11.00
+		price: 11.00,
+		img: "shrimp.png"
 	},
 	{
 		name: "zucchini",
@@ -72,7 +80,8 @@ var products = [
 		glutenFree: true,
 		organic: true,
 		shellfish: false,
-		price: 5.00
+		price: 5.00,
+		img: "zucchini.png"
 	},
 	{
 		name: "tomato",
@@ -80,7 +89,8 @@ var products = [
 		glutenFree: true,
 		organic: false,
 		shellfish: false,
-		price: 3.00
+		price: 3.00,
+		img: "tomato.png"
 	},
 	{
 		name: "banana",
@@ -88,7 +98,8 @@ var products = [
 		glutenFree: true,
 		organic: false,
 		shellfish: false,
-		price: 2.00
+		price: 2.00,
+		img: "banana.png"
 	},
 	{
 		name: "chicken",
@@ -96,7 +107,8 @@ var products = [
 		glutenFree: true,
 		organic: true,
 		shellfish: false,
-		price: 7.00
+		price: 7.00,
+		img: "chicken.png"
 	},
 	{
 		name: "noodle",
@@ -104,7 +116,8 @@ var products = [
 		glutenFree: false,
 		organic: false,
 		shellfish: false,
-		price: 4.50
+		price: 4.50,
+		img: "noodle.png"
 	},
 	{
 		name: "snow crab",
@@ -112,7 +125,8 @@ var products = [
 		glutenFree: true,
 		organic: false,
 		shellfish: true,
-		price: 29.50
+		price: 29.50,
+		img: "snowCrab.png"
 	}
 ];
 	
