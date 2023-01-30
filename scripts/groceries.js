@@ -141,7 +141,7 @@ function restrictListProducts(prods, restriction) {
 		if ((restriction == "Vegetarian") && (prods[i].vegetarian == true)){
 			product_names.push(prods[i]);
 		}
-		else if ((restriction == "GlutenFree") && (prods[i].glutenFree == true)){
+		else if ((restriction == "GlutenIntolerance") && (prods[i].glutenFree == true)){
 			product_names.push(prods[i]);
 		}
 		else if ((restriction == "ShellfishAllergy") && (prods[i].shellfish == false)){
