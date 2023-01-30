@@ -52,7 +52,7 @@ function populateListProductChoices(slct2) {
 	if (c1.checked)
 		optionArray = restrictListProducts(optionArray, "Vegetarian");
 	if (c2.checked)
-		optionArray = restrictListProducts(optionArray, "GlutenFree");
+		optionArray = restrictListProducts(optionArray, "GlutenIntolerance");
 	if (c3.checked)
 		optionArray = restrictListProducts(optionArray, "ShellfishAllergy");
 	if (c4.checked)
@@ -105,7 +105,6 @@ function populateListProductChoices(slct2) {
 			s2.appendChild(sixDiv);
 			sixDiv = document.createElement("div");
 			sixDiv.className = "ib";
-			alert("change row")
 			appended = true;
 		}
 
