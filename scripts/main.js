@@ -52,7 +52,7 @@ function populateListProductChoices(slct2) {
 	if (c1.checked)
 		optionArray = restrictListProducts(optionArray, "Vegetarian");
 	if (c2.checked)
-		optionArray = restrictListProducts(optionArray, "GlutenIntolerance");
+		optionArray = restrictListProducts(optionArray, "GlutenFree");
 	if (c3.checked)
 		optionArray = restrictListProducts(optionArray, "ShellfishAllergy");
 	if (c4.checked)
@@ -68,9 +68,13 @@ function populateListProductChoices(slct2) {
 	// for each item in the array, create a checkbox element, each containing information such as:
 	// <input type="checkbox" name="product" value="Bread">
 	// <label for="Bread">Bread/label><br>
-		
+	var appended = false;
+	var sixDiv = document.createElement("div");
+	sixDiv.className = "ib";
 	for (i = 0; i < optionArray.length; i++) {
-			
+		appended = false;
+		var curDiv = document.createElement("div");
+		curDiv.className = "itemBlock";
 		var productName = optionArray[i];
 		// create the checkbox and add in HTML DOM
 		var checkbox = document.createElement("input");
@@ -78,18 +82,36 @@ function populateListProductChoices(slct2) {
 		checkbox.name = "product";
 		checkbox.value = productName.name;
 		checkbox.id = productName.price;
+		checkbox.alt = productName.img;
 
-		s2.appendChild(checkbox);
-		
+		var img = document.createElement('img')
+		img.src = './img/'+productName.img;
+		curDiv.appendChild(img);
+		// create a breakline node and add in HTML DOM
+		curDiv.appendChild(document.createElement("br"));   
 		// create a label for the checkbox, and also add in HTML DOM
 		var label = document.createElement('label')
 		label.htmlFor = productName.name;
-		label.appendChild(document.createTextNode(productName.name+" $"+productName.price));
-		s2.appendChild(label);
+		curDiv.appendChild(checkbox);
 		
-		// create a breakline node and add in HTML DOM
-		s2.appendChild(document.createElement("br"));    
+		label.appendChild(document.createTextNode(productName.name));
+		curDiv.appendChild(label);
+		curDiv.appendChild(document.createElement("br"));
+		curDiv.appendChild(document.createTextNode("$" + productName.price));
+		curDiv.appendChild(document.createElement("br")); 
+		sixDiv.appendChild(curDiv);
+		//s2.appendChild(curDiv);
+		if(i%5==0&&i!=0){
+			s2.appendChild(sixDiv);
+			sixDiv = document.createElement("div");
+			sixDiv.className = "ib";
+			alert("change row")
+			appended = true;
+		}
+
 	}
+	if(!appended)
+		s2.appendChild(sixDiv);
 }
 	
 // This function is called when the "Add selected items to cart" button in clicked
@@ -112,6 +134,10 @@ function selectedItems(){
 		if (ele[i].checked) {
 			para.appendChild(document.createTextNode(ele[i].value));
 			para.appendChild(document.createTextNode(" $"+ele[i].id));
+			var img = document.createElement('img')
+			img.src = './img/' + ele[i].alt;
+			para.appendChild(document.createElement("br"));
+			para.appendChild(img);
 			para.appendChild(document.createElement("br"));
 			chosenProducts.push(ele[i].value);
 		}
@@ -122,4 +148,3 @@ function selectedItems(){
 	c.appendChild(document.createTextNode("Total Price is " + getTotalPrice(chosenProducts)));
 		
 }
-
