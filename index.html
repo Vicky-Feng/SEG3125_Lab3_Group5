@@ -10,12 +10,22 @@
 
 <!-- Tab links, each one with an onclick event associated with it -->
 <div class="tab">
-  <h1>&nbsp GVK's Store</h1>
-
-  <button class="tablinks" onclick="openInfo(event, 'Client')">Client</button>
-  <button class="tablinks" onclick="openInfo(event, 'Products')">Products</button>
-  <button class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button>
+    <h1><span style="font-size:30px;float:left" onclick="openNav()">&nbsp &#9776; Menu</span>&nbsp GVK's Store</h1>
 </div>
+
+
+<!--  <button class="tablinks" onclick="openInfo(event, 'Client')">Client</button>-->
+<!--  <button class="tablinks" onclick="openInfo(event, 'Products')">Products</button>-->
+<!--  <button class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button>-->
+</div>
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="#" onclick="openInfo(event, 'Client')">Client</a>
+    <a href="#" onclick="openInfo(event, 'Products')">Products</a>
+    <a href="#" onclick="openInfo(event, 'Cart')">Cart</a>
+</div>
+
+
 
 <!-- Tab content -->
 <div id="Client" class="tabcontent">
