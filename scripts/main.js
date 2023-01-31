@@ -5,12 +5,18 @@ openInfo(event, 'Client');
 // It is adapted from https://www.w3schools.com/howto/howto_js_tabs.asp
 function openNav() {
 	document.getElementById("mySidenav").style.width = "250px";
+	document.getElementById("Client").style.marginLeft = "250px";
+	document.getElementById("Products").style.marginLeft = "250px";
+	document.getElementById("Cart").style.marginLeft = "250px";
+
 }
 
 /* Set the width of the side navigation to 0 */
 function closeNav() {
 	document.getElementById("mySidenav").style.width = "0";
-}
+	document.getElementById("Client").style.marginLeft= "0";
+	document.getElementById("Products").style.marginLeft= "0";
+	document.getElementById("Cart").style.marginLeft= "0";}
 function openInfo(evt, tabName) {
 
 	// Get all elements with class="tabcontent" and hide them
