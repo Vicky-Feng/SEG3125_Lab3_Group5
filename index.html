@@ -46,6 +46,7 @@
     <input type="checkbox" id="choice5" name="choice5" value="NonOrganic" onchange="populateListProductChoices('displayProduct')">
     <label for="choice5">Non-organic</label><br>
 
+    <button type = "button"   onclick="openInfo(event, 'Products')">Go to my product options</button>
 </div>
 
 <div id="Products" class="tabcontent">
@@ -53,7 +54,7 @@
   <p>We preselected products based on your preference.</p>
 	 Choose items to buy:
 	 <div id="displayProduct"></div>
-	 <button id="addCart" type="button" class="block" onclick="selectedItems()">
+	 <button id="addCart" type="button" class="block" onclick="selectedItems(),openInfo(event, 'Cart')">
 		Add selected items to cart
 	</button>
 </div>
