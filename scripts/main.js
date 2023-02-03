@@ -80,6 +80,7 @@ function populateListProductChoices(slct2) {
 	for (i = 0; i < optionArray.length; i++) {
 		appended = false;
 		var curDiv = document.createElement("div");
+		//curDiv.alt = checkbox.id;
 		curDiv.className = "itemBlock";
 		var productName = optionArray[i];
 		// create the checkbox and add in HTML DOM
@@ -89,9 +90,15 @@ function populateListProductChoices(slct2) {
 		checkbox.value = productName.name;
 		checkbox.id = productName.price;
 		checkbox.alt = productName.img;
-
 		var img = document.createElement('img')
 		img.src = './img/'+productName.img;
+		curDiv.alt = checkbox.id;
+
+		curDiv.addEventListener("click", function(){
+			//alert(this.alt);
+			document.getElementById(this.alt).checked = true;
+		});
+
 		curDiv.appendChild(img);
 		// create a breakline node and add in HTML DOM
 		curDiv.appendChild(document.createElement("br"));   
@@ -119,6 +126,7 @@ function populateListProductChoices(slct2) {
 		s2.appendChild(sixDiv);
 }
 	
+
 // This function is called when the "Add selected items to cart" button in clicked
 // The purpose is to build the HTML to be displayed (a Paragraph) 
 // We build a paragraph to contain the list of selected items, and the total price
@@ -150,6 +158,6 @@ function selectedItems(){
 		
 	// add paragraph and total price
 	c.appendChild(para);
-	c.appendChild(document.createTextNode("Total Price is " + getTotalPrice(chosenProducts)));
+	c.appendChild(document.createTextNode("Total Price is $" + getTotalPrice(chosenProducts)));
 		
 }

@@ -62,7 +62,7 @@ var products = [
 		glutenFree: true,
 		organic: false,
 		shellfish: false,
-		price: 6.00,
+		price: 7.00,
 		img: "egg.png"
 	},
 	{
@@ -80,7 +80,7 @@ var products = [
 		glutenFree: true,
 		organic: true,
 		shellfish: false,
-		price: 5.00,
+		price: 5.01,
 		img: "zucchini.png"
 	},
 	{
@@ -89,7 +89,7 @@ var products = [
 		glutenFree: true,
 		organic: false,
 		shellfish: false,
-		price: 3.00,
+		price: 3.10,
 		img: "tomato.png"
 	},
 	{
@@ -98,7 +98,7 @@ var products = [
 		glutenFree: true,
 		organic: false,
 		shellfish: false,
-		price: 2.00,
+		price: 2.02,
 		img: "banana.png"
 	},
 	{
@@ -107,7 +107,7 @@ var products = [
 		glutenFree: true,
 		organic: true,
 		shellfish: false,
-		price: 7.00,
+		price: 7.03,
 		img: "chicken.png"
 	},
 	{
@@ -162,11 +162,11 @@ function restrictListProducts(prods, restriction) {
 
 // Calculate the total price of items, with received parameter being a list of products
 function getTotalPrice(chosenProducts) {
-	totalPrice = 0;
+	var totalPrice = 0;
 	for (let i=0; i<products.length; i+=1) {
 		if (chosenProducts.indexOf(products[i].name) > -1){
 			totalPrice += products[i].price;
 		}
 	}
-	return totalPrice;
+	return totalPrice.toFixed(2);;
 }
