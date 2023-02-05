@@ -125,6 +125,17 @@ function populateListProductChoices(slct2) {
 	if(!appended)
 		s2.appendChild(sixDiv);
 }
+
+//Haha, add the list of products with the respect of categories of products
+function updateTheNewCategory(category){
+	var cbox = document.getElementById(category);//The checkbox
+
+	var selct2 = document.getElementById("displayProduct");//filling in board
+	var optionArray =products;//product list
+	var productArray = selct2.children;//The rows of the board
+	var htmlhelper = "";//The final html String
+	var flag =false;
+}
 	
 
 // This function is called when the "Add selected items to cart" button in clicked
