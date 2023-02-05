@@ -10,6 +10,7 @@ var products = [
 		organic: false,
 		shellfish: false,
 		price: 1.99,
+		category: "vegetable",
 		img: "broccoli.png"
 	},
 	{
@@ -19,6 +20,7 @@ var products = [
 		organic: false,
 		shellfish: false,
 		price: 2.35,
+		category: "diary",
 		img: "bread.png"
 	},
 	{
@@ -28,6 +30,7 @@ var products = [
 		organic: true,
 		shellfish: false,
 		price: 10.00,
+		category: "meat",
 		img: "salmon.png"
 	},
 	{
@@ -37,6 +40,7 @@ var products = [
 		organic: true,
 		shellfish: false,
 		price: 5.00,
+		category: "fruit",
 		img: "blueberries.png"
 	},
 	{
@@ -45,6 +49,7 @@ var products = [
 		glutenFree: true,
 		organic: false,
 		price: 12.00,
+		category: "meat",
 		img: "beef.png"
 	},
 	{
@@ -54,6 +59,7 @@ var products = [
 		organic: true,
 		shellfish: false,
 		price: 6.00,
+		category: "vegetable",
 		img: "mushroom.png"
 	},
 	{
@@ -63,6 +69,7 @@ var products = [
 		organic: false,
 		shellfish: false,
 		price: 7.00,
+		category: "diary",
 		img: "egg.png"
 	},
 	{
@@ -72,6 +79,7 @@ var products = [
 		organic: false,
 		shellfish: true,
 		price: 11.00,
+		category: "meat",
 		img: "shrimp.png"
 	},
 	{
@@ -81,6 +89,7 @@ var products = [
 		organic: true,
 		shellfish: false,
 		price: 5.01,
+		category: "vegetable",
 		img: "zucchini.png"
 	},
 	{
@@ -90,6 +99,7 @@ var products = [
 		organic: false,
 		shellfish: false,
 		price: 3.10,
+		category: "vegetable",
 		img: "tomato.png"
 	},
 	{
@@ -99,6 +109,7 @@ var products = [
 		organic: false,
 		shellfish: false,
 		price: 2.02,
+		category: "fruit",
 		img: "banana.png"
 	},
 	{
@@ -108,6 +119,7 @@ var products = [
 		organic: true,
 		shellfish: false,
 		price: 7.03,
+		category: "meat",
 		img: "chicken.png"
 	},
 	{
@@ -117,6 +129,7 @@ var products = [
 		organic: false,
 		shellfish: false,
 		price: 4.50,
+		category: "diary",
 		img: "noodle.png"
 	},
 	{
@@ -126,6 +139,7 @@ var products = [
 		organic: false,
 		shellfish: true,
 		price: 29.50,
+		category:"meat",
 		img: "snowCrab.png"
 	}
 ];
