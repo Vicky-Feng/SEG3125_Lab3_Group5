@@ -7,4 +7,3 @@ Kaixi Xu 300049787
 
 This is the lab03 for SEG3125 Winter 2023.
 
-俺作业不写了，跑路了跑路了
