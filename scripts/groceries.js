@@ -182,5 +182,6 @@ function getTotalPrice(chosenProducts) {
 			totalPrice += products[i].price;
 		}
 	}
-	return totalPrice.toFixed(2);;
+	//return 2;
+	return totalPrice.toFixed(2);
 }

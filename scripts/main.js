@@ -1,6 +1,8 @@
 openNav();
 openInfo(event, 'Client');
 
+//var selectedObjects=[];
+
 // This function is called when any of the tab is clicked
 // It is adapted from https://www.w3schools.com/howto/howto_js_tabs.asp
 function openNav() {
@@ -201,7 +203,8 @@ function selectedItems(){
 			para.appendChild(document.createElement("br"));
 			para.appendChild(img);
 			para.appendChild(document.createElement("br"));
-			chosenProducts.push(ele[i].value);
+			chosenProducts.push(ele[i].id.substring(4));
+
 		}
 	}
 		
@@ -210,15 +213,3 @@ function selectedItems(){
 	c.appendChild(document.createTextNode("Total Price is $" + getTotalPrice(chosenProducts)));
 		
 }
-
-/*flag =false;//re-initialize the flag
-		
-		
-			
-		//The length of productArray element children
-			
-				
-					
-			}
-		}
-		*/
