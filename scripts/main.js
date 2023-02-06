@@ -132,40 +132,47 @@ function populateListProductChoices(slct2) {
 function updateTheNewCategory(category){
 	var cbox = document.getElementById(category);//The checkbox
 
-	var selct2 = document.getElementById("displayProduct");//filling in board
-	var optionArray =products;//product list
-	var productArray = selct2.children;//The rows of the board
-	var htmlhelper = "";//The final html String
-	var flag =false;
-	var respectArray;
-	var productOption;//
-	var productPrice;//The price of the Proucts
-	for(i=0;i<productArray.length;i++){
-		htmlhelper += "<div class='ib'>"
-		for(j=0;j<productArray[i].children.length;j++){
-			flag = false
-			respectArray = productArray[i].children;//the elems of the div
-			for(k=0;k<optionArray.length;k++){
-				//for every product list elem
-				if(respectArray[j].id===optionArray[k].name){
-					productOption = optionArray[k];
-					productPrice = optionArray[k].price
-					if(optionArray[k].category === category){
-						flag = true;
-					}
-				}
-			}
-			if(flag){
-				htmlhelper += "<div id='"+respectArray[j].id+"' class='itemBlock'>"
-				htmlhelper += "<img src='./img/"+respectArray[j].id+".png' alt='"+respectArray[j].id+".png'><br>"
-				htmlhelper += "<input type='checkbox' name='product' value='"+productPrice+"' id='name"+respectArray[j].id+"' alt='"+respectArray[j].id+".png'>";
-				htmlhelper += "<label for='"+respectArray[j].id+"'>"+respectArray[j].id+"</label>";
-				htmlhelper += "<br> $"+productPrice+"<br></div>";
-			}
-		}
-		htmlhelper += "</div>"
+	if(cbox.checked==true){
+		var selct2 = document.getElementById("displayProduct");//filling in board
+	    var optionArray =products;//product list
+	    var productArray = selct2.children;//The rows of the board
+	    var htmlhelper = "";//The final html String
+	    var flag =false;
+	    var respectArray;
+	    var productOption;//
+	    var productPrice;//The price of the Proucts
+	    for(i=0;i<productArray.length;i++){
+		    htmlhelper += "<div class='ib'>"
+		    for(j=0;j<productArray[i].children.length;j++){
+			    flag = false
+			    respectArray = productArray[i].children;//the elems of the div
+			    for(k=0;k<optionArray.length;k++){
+				    //for every product list elem
+				    if(respectArray[j].id===optionArray[k].name){
+					    productOption = optionArray[k];
+					    productPrice = optionArray[k].price
+					    if(optionArray[k].category === category){
+						    flag = true;
+					    }
+				    }
+			    }
+			    if(flag){
+				    htmlhelper += "<div id='"+respectArray[j].id+"' class='itemBlock'>"
+				    htmlhelper += "<img src='./img/"+respectArray[j].id+".png' alt='"+respectArray[j].id+".png'><br>"
+				    htmlhelper += "<input type='checkbox' name='product' value='"+productPrice+"' id='name"+respectArray[j].id+"' alt='"+respectArray[j].id+".png'>";
+				    htmlhelper += "<label for='"+respectArray[j].id+"'>"+respectArray[j].id+"</label>";
+				    htmlhelper += "<br> $"+productPrice+"<br></div>";
+			    }
+		    }
+		    htmlhelper += "</div>"
+	    }
+	    selct2.innerHTML = htmlhelper;
 	}
-	selct2.innerHTML = htmlhelper;
+	else{
+		populateListProductChoices('displayProduct')
+	}
+
+	
 }
 	
 
