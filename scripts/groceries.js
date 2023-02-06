@@ -140,7 +140,7 @@ var products = [
 		shellfish: true,
 		price: 29.50,
 		category:"meat",
-		img: "snowCrab.png"
+		img: "snow crab.png"
 	}
 ];
 	

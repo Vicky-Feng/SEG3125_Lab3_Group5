@@ -78,20 +78,22 @@ function populateListProductChoices(slct2) {
 	var sixDiv = document.createElement("div");
 	sixDiv.className = "ib";
 	for (i = 0; i < optionArray.length; i++) {
+		var productName = optionArray[i];
 		appended = false;
 		var curDiv = document.createElement("div");
+		curDiv.id = productName.name;
 		//curDiv.alt = checkbox.id;
 		curDiv.className = "itemBlock";
-		var productName = optionArray[i];
 		// create the checkbox and add in HTML DOM
 		var checkbox = document.createElement("input");
 		checkbox.type = "checkbox";
 		checkbox.name = "product";
-		checkbox.value = productName.name;
-		checkbox.id = productName.price;
+		checkbox.value = productName.price;
+		checkbox.id = "name"+productName.name;//change to name
 		checkbox.alt = productName.img;
 		var img = document.createElement('img')
 		img.src = './img/'+productName.img;
+		img.alt = productName.img;
 		curDiv.alt = checkbox.id;
 
 		curDiv.addEventListener("click", function(){
@@ -135,6 +137,35 @@ function updateTheNewCategory(category){
 	var productArray = selct2.children;//The rows of the board
 	var htmlhelper = "";//The final html String
 	var flag =false;
+	var respectArray;
+	var productOption;//
+	var productPrice;//The price of the Proucts
+	for(i=0;i<productArray.length;i++){
+		htmlhelper += "<div class='ib'>"
+		for(j=0;j<productArray[i].children.length;j++){
+			flag = false
+			respectArray = productArray[i].children;//the elems of the div
+			for(k=0;k<optionArray.length;k++){
+				//for every product list elem
+				if(respectArray[j].id===optionArray[k].name){
+					productOption = optionArray[k];
+					productPrice = optionArray[k].price
+					if(optionArray[k].category === category){
+						flag = true;
+					}
+				}
+			}
+			if(flag){
+				htmlhelper += "<div id='"+respectArray[j].id+"' class='itemBlock'>"
+				htmlhelper += "<img src='./img/"+respectArray[j].id+".png' alt='"+respectArray[j].id+".png'><br>"
+				htmlhelper += "<input type='checkbox' name='product' value='"+productPrice+"' id='name"+respectArray[j].id+"' alt='"+respectArray[j].id+".png'>";
+				htmlhelper += "<label for='"+respectArray[j].id+"'>"+respectArray[j].id+"</label>";
+				htmlhelper += "<br> $"+productPrice+"<br></div>";
+			}
+		}
+		htmlhelper += "</div>"
+	}
+	selct2.innerHTML = htmlhelper;
 }
 	
 
@@ -156,8 +187,8 @@ function selectedItems(){
 	para.appendChild(document.createElement("br"));
 	for (i = 0; i < ele.length; i++) { 
 		if (ele[i].checked) {
-			para.appendChild(document.createTextNode(ele[i].value));
-			para.appendChild(document.createTextNode(" $"+ele[i].id));
+			para.appendChild(document.createTextNode(ele[i].id.substring(4)));
+			para.appendChild(document.createTextNode(" $"+ele[i].value));
 			var img = document.createElement('img')
 			img.src = './img/' + ele[i].alt;
 			para.appendChild(document.createElement("br"));
@@ -172,3 +203,15 @@ function selectedItems(){
 	c.appendChild(document.createTextNode("Total Price is $" + getTotalPrice(chosenProducts)));
 		
 }
+
+/*flag =false;//re-initialize the flag
+		
+		
+			
+		//The length of productArray element children
+			
+				
+					
+			}
+		}
+		*/
